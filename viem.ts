@@ -28,7 +28,7 @@ async function ContractSendTx() {
         address: contract_address,
         abi: abi,
         functionName: 'mintTest',
-        args: ["0x_some wallet address"],
+        args: [account.address],
         account
       })
     const tx =  await walletClient.writeContract(request)
