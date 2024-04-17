@@ -41,7 +41,13 @@ const chains = {
     		"testnet": {
     			"rpcUrl": "https://testnet.skalenodes.com/v1/giant-half-dual-testnet",
     			"chainId": 974399131,
-    			"contracts": []
+    			"contracts": [
+					{
+					address: "0xD8C9b79daA0aa37072d1aB6B410B3A6dd686EaFf",
+					contractName: "MyToken",
+					contractType: "erc721"
+					}
+				]
     		}
     	}
 	},
@@ -61,7 +67,13 @@ const chains = {
     		"testnet": {
     			"rpcUrl": "https://testnet.skalenodes.com/v1/juicy-low-small-testnet",
     			"chainId": 1444673419,
-    			"contracts": []
+    			"contracts": [
+					{
+						address: "0x574e0Ba1DE67f849b4af96C2C77cA81A6EAD18d0",
+						contractName: "MyToken",
+						contractType: "erc721"
+					}
+				]
     		},
     	}
 	},
@@ -80,7 +92,13 @@ const chains = {
     		"testnet": {
     			"rpcUrl": "https://testnet.skalenodes.com/v1/lanky-ill-funny-testnet",
     			"chainId": 37084624,
-    			"contracts": []
+    			"contracts": [
+					{
+						address: "0x4487AF7f18044A99927e81CC628F558F3D091419",
+						contractName: "MyToken",
+						contractType: "erc721"
+					}
+				]
     		},
     	}
 	},
@@ -100,7 +118,13 @@ const chains = {
     		"testnet": {
     			"rpcUrl": "https://testnet.skalenodes.com/v1/aware-fake-trim-testnet",
     			"chainId": 1020352220,
-    			"contracts": [],
+    			"contracts": [
+					{
+						address: "0xB2d03AbBb56B3E4B910eFf8F4ed55baFa36103df",
+						contractName: "MyToken",
+						contractType: "erc721"
+					}
+				],
             },
     	}
 	}
