@@ -5,26 +5,33 @@ import 'package:http/http.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:path/path.dart' show join, dirname;
 import 'package:web_socket_channel/io.dart';
+import 'chains.dart';
 
 //Private Key
-const String privateKey ='your private key';
+const String privateKey ='your pk';
+
+//Select which chain you want to use
+Chain? selected_SKALE_chain = chains[ChainKey.nebula];
 
 // SKALE Chain RPC
-const String rpcUrl = 'https://testnet.skalenodes.com/v1/lanky-ill-funny-testnet';
+String rpcUrl = selected_SKALE_chain?.chainInfo?.testnet.rpcUrl ?? "no url";
 // selected SKALE Chain ID
-const int chainId = 37084624;
+int chainId = selected_SKALE_chain?.chainInfo?.testnet.chainId ?? 0;
 
 // ABI of ERC_721 example contract
 final File abiFile = File(join(dirname(Platform.script.path), 'abi.json'));
 
 
 Future<void> main() async {
+
   // start a client we can use to send transactions
   final client = Web3Client(rpcUrl, Client());
 
   final EthereumAddress mint_to_address = EthereumAddress.fromHex('address to mint to');
-  // Contract adddress deployed on SKALE Chaos Hub
-  final EthereumAddress contract_address = EthereumAddress.fromHex('0x4487AF7f18044A99927e81CC628F558F3D091419');
+
+  String adddress = selected_SKALE_chain?.chainInfo?.testnet.contracts[0].address ?? "no address";
+
+  final EthereumAddress contract_address = EthereumAddress.fromHex(adddress);
   
   //Credentials to sign tx
   final credentials = EthPrivateKey.fromHex(privateKey);
