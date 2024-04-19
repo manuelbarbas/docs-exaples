@@ -13,6 +13,7 @@ const publicClient = createPublicClient({
 const pk = process.env.PRIVATE_KEY || "";
 const account = privateKeyToAccount(`0x${pk}`);
 
+//Place here the contract address you deployed
 const contract_address = "0x4487AF7f18044A99927e81CC628F558F3D091419";
 
 const walletClient = createWalletClient({
