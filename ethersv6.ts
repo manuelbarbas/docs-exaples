@@ -4,6 +4,7 @@ import {chains} from "./chains"
 import dotenv from 'dotenv';
 dotenv.config();
 
+//Select which SKALE chain you want to use
 const selected_chain = chains.nebula;
 
 const skale_provider = selected_chain.chainInfo.testnet.rpcUrl;
