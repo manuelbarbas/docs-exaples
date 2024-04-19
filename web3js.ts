@@ -4,6 +4,7 @@ import {chains} from "./chains"
 import dotenv from 'dotenv';
 dotenv.config();
 
+//Select which SKALE chain to use
 const selected_chain = chains.nebula;
 
 var web3 = new Web3(selected_chain.chainInfo.testnet.rpcUrl);
